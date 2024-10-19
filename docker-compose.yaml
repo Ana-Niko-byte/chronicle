@@ -1,0 +1,11 @@
+services:
+ app:
+  build: .
+  volumes:
+   - ./backend:/backend
+  working_dir: /backend
+  ports:
+   - 8000:8000
+  image: chronicle:django
+  container_name: chronicle_container
+  command: python manage.py runserver 0.0.0.0:8000
